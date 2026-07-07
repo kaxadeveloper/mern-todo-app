@@ -44,3 +44,11 @@ router.patch("/:id", async (req, res) => {
     }
 })
 
+router.delete("/:id", async (req, res) => {
+    try {
+        await Todo.findByIdAndDelete(req.params.id)
+        res.json({ message: "Todo deleted" })
+    } catch (error) {
+        res.status(500).json({ message: err.message });
+    }
+})
