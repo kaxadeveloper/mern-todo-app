@@ -9,6 +9,8 @@ import axios from "axios";
 function App() {
   const [newTodo, setNewTodo] = useState("");
   const [todos, setTodos] = useState([]);
+  const [editingTodo, setEditingTodo] = useState(null);
+  const [editedText, setEditedText] = useState("");
 
   const addTodo = async (e) => {
     e.preventDefault();
@@ -60,7 +62,13 @@ function App() {
           ) : (
             <div>
               {todos.map((todo) => (
-                <div key={todo._id}>{todo.text}</div>
+                <div key={todo._id}>
+                  {editingTodo === todo._id ? (
+                    <div></div>
+                  ) : (
+                    <div></div>
+                  )}
+                </div>
               ))}
             </div>
           )}
