@@ -1,6 +1,6 @@
-import { useState } from "react";
+import { useEffect, useState } from "react";
 import { MdOutlineDone } from "react-icons/md";
-import { IoClose } from "react-icons/ioS";
+import { IoClose } from "react-icons/io5";
 import { MdModeEditOutline } from "react-icons/md";
 import { FaTrash } from "react-icons/fa6";
 import { IoClipboardOutline } from "react-icons/io5";
@@ -20,7 +20,21 @@ function App() {
     } catch (error) {
       console.log("Error adding todo:", error);
     }
-  }
+  };
+
+  const fetchTodos = async () => {
+    try {
+      const response = await axios.get("/api/todos");
+      console.log(response.data)
+      setTodos(response.data)
+    } catch (error) {
+      console.log("Error fetching todos:", error);
+    }
+  };
+
+  useEffect(() => {
+    fetchTodos();
+  }, [])
 
   return (
     <div className="min-h-screen bg-gradient-to-br from gray-50 to-gray-100 flex items-center justify-center p-4">
@@ -56,4 +70,4 @@ function App() {
   );
 }
 
-export default App
+export default App;
