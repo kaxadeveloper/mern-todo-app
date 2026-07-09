@@ -71,6 +71,9 @@ function App() {
                   {editingTodo === todo._id ? (
                     <div>
                       <input type="text" value={editedText} onChange={(e) => setEditedText(e.target.value)} />
+                      <button>
+                        <IoClose />
+                      </button>
                     </div>
                   ) : (
                     <div>
