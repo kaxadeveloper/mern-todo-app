@@ -89,10 +89,10 @@ function App() {
                       <div className="flex items-center justify-between">
                         <span>{todo.text}</span>
                         <div className="flex gap-x-2">
-                          <button  onClick={() => startEditing(todo)}>
+                          <button className="p-2 text-blue-500 hover:text-blue-700 rounded-lg hover:bg-blue-50 duration-200" onClick={() => startEditing(todo)}>
                             <MdModeEditOutline />
                           </button>
-                          <button>
+                          <button >
                             <FaTrash />
                           </button>
                         </div>
