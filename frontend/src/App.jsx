@@ -72,6 +72,9 @@ function App() {
                     <div>
                       <input type="text" value={editedText} onChange={(e) => setEditedText(e.target.value)} />
                       <button>
+                        <MdOutlineDone />
+                      </button>
+                      <button>
                         <IoClose />
                       </button>
                     </div>
