@@ -74,6 +74,9 @@ function App() {
                         <button>
                           <MdModeEditOutline />
                         </button>
+                        <button>
+                          <FaTrash />
+                        </button>
                       </div>
                     </div>
                   )}
