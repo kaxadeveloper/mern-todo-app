@@ -39,8 +39,8 @@ function App() {
   }, []);
 
   const startEditing = (todo) => {
-     setEditingTodo(todo._id)
-     setEditedText(todo.text)
+    setEditingTodo(todo._id)
+    setEditedText(todo.text)
   }
 
   return (
@@ -69,14 +69,20 @@ function App() {
               {todos.map((todo) => (
                 <div key={todo._id}>
                   {editingTodo === todo._id ? (
-                    <div>
-                      <input type="text" value={editedText} onChange={(e) => setEditedText(e.target.value)} />
-                      <button>
-                        <MdOutlineDone />
-                      </button>
-                      <button>
-                        <IoClose />
-                      </button>
+                    <div className="flex items-center gap-x-3">
+                      <input
+                        className="flex-1 p-3 border rounded-lg border-gray-200 outline-none focus:ring-2 focus:ring-blue-300 text-gray-700 shadow-inner"
+                        type="text"
+                        value={editedText}
+                        onChange={(e) => setEditedText(e.target.value)} />
+                      <div className="flex gap-x-2">
+                        <button >
+                          <MdOutlineDone />
+                        </button>
+                        <button onClick={() => setEditingTodo(null)}>
+                          <IoClose />
+                        </button>
+                      </div>
                     </div>
                   ) : (
                     <div>
