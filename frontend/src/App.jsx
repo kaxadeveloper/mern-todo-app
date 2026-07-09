@@ -79,7 +79,7 @@ function App() {
                         <button className="px-4 py-2 bg-green-500 text-white rounded-lg hover:bg-green-600 cursor-pointer">
                           <MdOutlineDone />
                         </button>
-                        <button onClick={() => setEditingTodo(null)}>
+                        <button className="px-4 py-2 bg-gray-200 text-gray-700 rounded-lg hover:bg-gray-300 cursor-pointer" onClick={() => setEditingTodo(null)}>
                           <IoClose />
                         </button>
                       </div>
