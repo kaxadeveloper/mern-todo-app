@@ -64,9 +64,18 @@ function App() {
               {todos.map((todo) => (
                 <div key={todo._id}>
                   {editingTodo === todo._id ? (
-                    <div></div>
+                    <div>
+                      <input type="text" value={editedText} onChange={(e) => setEditedText(e.target.value)} />
+                    </div>
                   ) : (
-                    <div></div>
+                    <div>
+                      <div>
+                        {todo.text}
+                        <button>
+                          <MdModeEditOutline />
+                        </button>
+                      </div>
+                    </div>
                   )}
                 </div>
               ))}
