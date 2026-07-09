@@ -36,7 +36,12 @@ function App() {
 
   useEffect(() => {
     fetchTodos();
-  }, [])
+  }, []);
+
+  const startEditing = (todo) => {
+     setEditingTodo(todo._id)
+     setEditedText(todo.text)
+  }
 
   return (
     <div className="min-h-screen bg-gradient-to-br from gray-50 to-gray-100 flex items-center justify-center p-4">
@@ -71,7 +76,7 @@ function App() {
                     <div>
                       <div>
                         {todo.text}
-                        <button>
+                        <button onClick={() => startEditing(todo)}>
                           <MdModeEditOutline />
                         </button>
                         <button>
