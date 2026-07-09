@@ -92,7 +92,7 @@ function App() {
                           <button className="p-2 text-blue-500 hover:text-blue-700 rounded-lg hover:bg-blue-50 duration-200" onClick={() => startEditing(todo)}>
                             <MdModeEditOutline />
                           </button>
-                          <button >
+                          <button className="p-2 text-red-500 hover:text-red-700 rounded-lg hover:bg-red-50 duration-200">
                             <FaTrash />
                           </button>
                         </div>
