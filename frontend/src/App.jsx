@@ -88,12 +88,14 @@ function App() {
                     <div>
                       <div>
                         {todo.text}
-                        <button onClick={() => startEditing(todo)}>
-                          <MdModeEditOutline />
-                        </button>
-                        <button>
-                          <FaTrash />
-                        </button>
+                        <div className="flex gap-x-2">
+                          <button onClick={() => startEditing(todo)}>
+                            <MdModeEditOutline />
+                          </button>
+                          <button>
+                            <FaTrash />
+                          </button>
+                        </div>
                       </div>
                     </div>
                   )}
