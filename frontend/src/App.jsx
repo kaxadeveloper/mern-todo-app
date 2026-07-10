@@ -46,7 +46,7 @@ function App() {
   const saveEdit = async (id) => {
     try {
       const response = await axios.patch(`/api/todos/${id}`, {
-        text: editedText 
+        text: editedText
       })
       setTodos(todos.map((todo) => (todo._id === id ? response.data : todo)))
       setEditingTodo(null);
@@ -97,8 +97,8 @@ function App() {
                         value={editedText}
                         onChange={(e) => setEditedText(e.target.value)} />
                       <div className="flex gap-x-2">
-                        <button 
-                        onClick={() => saveEdit(todo._id)} className="px-4 py-2 bg-green-500 text-white rounded-lg hover:bg-green-600 cursor-pointer">
+                        <button
+                          onClick={() => saveEdit(todo._id)} className="px-4 py-2 bg-green-500 text-white rounded-lg hover:bg-green-600 cursor-pointer">
                           <MdOutlineDone />
                         </button>
                         <button className="px-4 py-2 bg-gray-200 text-gray-700 rounded-lg hover:bg-gray-300 cursor-pointer" onClick={() => setEditingTodo(null)}>
@@ -121,7 +121,9 @@ function App() {
                           <button className="p-2 text-blue-500 hover:text-blue-700 rounded-lg hover:bg-blue-50 duration-200" onClick={() => startEditing(todo)}>
                             <MdModeEditOutline />
                           </button>
-                          <button className="p-2 text-red-500 hover:text-red-700 rounded-lg hover:bg-red-50 duration-200">
+                          <button
+                            onClick={() => deleteTodo(todo._id)}
+                            className="p-2 text-red-500 hover:text-red-700 rounded-lg hover:bg-red-50 duration-200">
                             <FaTrash />
                           </button>
                         </div>
