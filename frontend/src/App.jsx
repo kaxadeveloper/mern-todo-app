@@ -49,6 +49,7 @@ function App() {
         text: editedText 
       })
       setTodos(todos.map((todo) => (todo._id === id ? response.data : todo)))
+      setEditingTodo(null);
     } catch (error) {
       console.log("Error updating todo:", error)
     }
