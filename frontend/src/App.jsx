@@ -55,6 +55,15 @@ function App() {
     }
   }
 
+  const deleteTodo = async (id) => {
+    try {
+      await axios.delete(`/api/todos/${id}`);
+      setTodos(todos.filter((todo) => todo._id !== id))
+    } catch (error) {
+      console.log("Error deleting todo:", error)
+    }
+  }
+
   return (
     <div className="min-h-screen bg-gradient-to-br from gray-50 to-gray-100 flex items-center justify-center p-4">
       <div className="bg-white rounded-2xl shadow-xl w-full max-w-lg p-8">
