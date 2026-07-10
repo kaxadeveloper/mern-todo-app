@@ -87,7 +87,8 @@ function App() {
                         value={editedText}
                         onChange={(e) => setEditedText(e.target.value)} />
                       <div className="flex gap-x-2">
-                        <button className="px-4 py-2 bg-green-500 text-white rounded-lg hover:bg-green-600 cursor-pointer">
+                        <button 
+                        onClick={() => saveEdit(todo._id)} className="px-4 py-2 bg-green-500 text-white rounded-lg hover:bg-green-600 cursor-pointer">
                           <MdOutlineDone />
                         </button>
                         <button className="px-4 py-2 bg-gray-200 text-gray-700 rounded-lg hover:bg-gray-300 cursor-pointer" onClick={() => setEditingTodo(null)}>
