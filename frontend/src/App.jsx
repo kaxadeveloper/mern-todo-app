@@ -62,7 +62,19 @@ function App() {
     } catch (error) {
       console.log("Error deleting todo:", error)
     }
-  }
+  };
+
+  const toggleTodo = async (id) => {
+    try {
+      const todo = todos.find((t) => t._id === id)
+      const response = await axios.patch(`/api/todos/${id}`, {
+        completed: !todo.completed
+      })
+      setTodos(todos.map((t) => t._id === id ? response.data : t))
+    } catch (error) {
+      console.log("Error toggline todo:", error)
+    }
+  };
 
   return (
     <div className="min-h-screen bg-gradient-to-br from gray-50 to-gray-100 flex items-center justify-center p-4">
